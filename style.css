@@ -1,0 +1,513 @@
+
+
+.nav-bar {
+    position: sticky;
+    position: -webkit-sticky;
+    z-index: 1000; /* Garante que a barra fique sobre outros elementos da página */
+    background-color: #EDE7E3;
+    height: 120px;
+    width: 100%;
+    top: 0;
+    display: flex;
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+    justify-content: space-between; /* Dá espaço entre o logo e o menu */
+    padding: 0 20px; /* Adiciona espaçamento nas laterais */
+    
+}
+
+
+body {
+    margin: 0; /* Remove a margem padrão do body */
+    padding-top: 50px; /* Adiciona espaço no topo da página igual à altura da barra de navegação */
+}
+
+.nav-bar .logo {
+    max-width: 150px; /* Define um tamanho máximo para o contêiner do logo */
+    height: auto; 
+   
+}
+
+.nav-bar .logo img {
+    max-width: 100%; /* Garante que a imagem nunca exceda a largura do contêiner */
+    height: auto; /* Mantém a proporção correta */
+    display: block;
+}
+
+.nav-bar .nav {
+    display: flex;
+    align-items: center; /* Centraliza verticalmente os itens da lista */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    flex: 1; /* Faz com que a lista ocupe todo o espaço restante */
+    margin: 0; /* Remove margens indesejadas */
+    padding: 0; /* Remove padding indesejado */
+    list-style: none; /* Remove os marcadores da lista */
+}
+
+.nav-bar .nav-item {
+    flex-grow: 1; /* Cada item de navegação ocupará uma largura uniforme */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Garante que os itens ocupem toda a altura da barra */
+}
+
+.nav-bar .nav-link {
+    color: white;
+    text-decoration: none;
+    display: block;
+    width: 100%; /* Faz o link ocupar toda a área do item de navegação */
+    height: 100%; /* Faz o link ocupar toda a altura do item */
+    padding: 0 10px; /* Espaçamento interno para um layout mais espaçado */
+    line-height: 50px; /* Centraliza verticalmente o texto dentro do link */
+}
+
+
+
+
+
+
+p{
+    font-family: "Rajdhani", sans-serif;
+}
+
+.renovacao-text{
+    font-size: 30px;
+    font-family: 'Tangerine', serif;
+    color: #F7A637;
+  
+   
+}
+
+
+.nav-bar .nav-link {
+    color:#1A2E35;
+    text-decoration: none;
+    font-size: larger;
+    font-family: "DM Serif Text", serif;
+    
+}
+
+.nav-bar .nav-link:hover{
+    text-shadow: 4px 4px 4px #F7A637; 
+
+}
+
+.nav-bar p{
+    font-size: 35px;
+    
+}
+
+
+.carou {
+    width: 100%; /* Garante que o container do carousel ocupe 100% da largura */
+    overflow: hidden; /* Esconde qualquer transbordo */
+}
+
+.carousel-inner {
+    width: 100%;
+    max-width: 100%;
+}
+
+.carousel-item {
+    width: 100%; /* Faz com que cada item ocupe 100% da largura da tela */
+    background-size: cover; /* Faz com que a imagem de fundo cubra toda a área do item */
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 400px; /* Define uma altura mínima. Ajuste conforme necessário */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-carou {
+    font-family: "DM Serif Text", serif;
+    padding-top: 70px;
+    color: white;
+    font-size: 77px;
+    font-weight: bold;
+    text-align: center;
+    z-index: 2; /* Garante que o texto fique acima da imagem */
+}
+
+.carousel-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adiciona uma camada de overlay */
+    z-index: 1; /* Coloca o overlay abaixo do texto */
+}
+
+.QuemSomos{
+    background-color: #1A2E35;
+} 
+
+
+.QuemSomos .mb-4{
+    font-family: "DM Serif Text", serif;
+    color:#EDE7E3 ;
+}
+
+
+
+.container-xxl .text-descricao {
+    color:#EDE7E3 ;
+    font-family: "Rajdhani";
+    font-size: large;
+    
+
+}
+
+.col-lg-6  .btn-agende {
+
+    margin-top: 50px;
+    width: 260px;
+    margin-left: 97px;
+
+    background-color: #F7A637;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.3s ease;
+    transition: color 0.3s ease;
+    box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.4);
+
+
+}
+
+
+.col-lg-6  .btn-agende:hover{
+    background: linear-gradient(45deg, #F7A637, #113346);
+    
+}
+
+.container-xxl .btn-agende::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #FAF3E0;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.container-xxl .btn-agende:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+
+
+
+
+@keyframes shadow-pulse {
+    0%, 100% {
+        text-shadow: 0 0 5px #F7A637, 0 0 10px #ff0000, 0 0 15px #113346;
+    }
+    50% {
+        text-shadow: 0 0 10px #ff4500, 0 0 20px #113346, 0 0 30px #F7A637;
+    }
+}
+
+
+
+/* especialidades    */
+
+.col-md-6 {
+    cursor: pointer;
+   
+}
+
+/* Efeito hover: mudar a cor da borda e do fundo */
+.col-md-6:hover {
+    transform: scale(1.05); /* Aumenta ligeiramente o tamanho do elemento */
+}
+    
+
+.service-item {
+    transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+    border: 4px solid #113346; /* Define a borda com a cor desejada */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 10px; /* Espaçamento interno */
+}
+
+.service-item:hover {
+    border-color: #F7A637; /* Muda a cor da borda ao passar o mouse */
+    background-color: #e5e5e5; /* Muda a cor de fundo ao passar o mouse */
+}
+
+
+
+
+
+.service-item .line-dec,
+.service-item p {
+    display: none;
+}
+
+.textoEspe{
+    padding: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    border: 8px solid;
+    border-image: linear-gradient(to right, #F7A637, #113346) 1;
+}
+
+.textoEspe .textEspe {
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000, 2px 2px 5px #555, 3px 3px 8px #aaa;
+    font-size: 40px;
+    font-family: "DM Serif Text", serif;
+    background-color: #1A2E35;
+    margin-bottom: 0%;   
+
+}
+
+
+
+
+
+.services-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.service-box {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+
+}
+
+.service-box h3 {
+    margin: 0 0 10px;
+}
+
+.service-box .more-info {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.service-box .service-info {
+    display: none;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+
+/* galeria */ 
+
+.galeria .side-galeria{
+    left: 0%;
+
+}
+
+.galeria .botao-galeria{
+    display: block;
+    padding: 16px;
+}
+
+
+/* testando */
+
+.service-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15vh;
+    
+    background-attachment: fixed;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center center;
+    background-color: #F2F2F2;
+  }
+  
+  .service-content .left-text h4 {
+    font-size: 24px;
+    font-weight: 500;
+    color: #1A2E35;
+  }
+  
+  h4, .h4 {
+    font-size: 18px;
+  }
+  
+  .service-content .left-text .line-dec {
+    width: 45px;
+    height: 3px;
+    background-color: #ff7d27;
+    margin: 20px 0px 20px 0px;
+  }
+  
+  .service-content .left-text p {
+    color: #1A2E35;
+  }
+  
+  .service-content .left-text ul {
+    padding: 0;
+    margin-top: 30px;
+    list-style: none;
+  }
+  
+  .service-content .left-text ul li {
+    margin: 15px 0px;
+    font-weight: 600;
+    color: #1A2E35;
+  }
+  
+  
+  
+  .service-content .service-item {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 25px 30px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 30px;
+    
+  }
+  
+  .service-content .service-item .line-dec {
+    width: 45px;
+    height: 3px;
+    background-color: #ff7d27;
+    margin: 20px auto 15px auto;
+  }
+
+  .primary-button .btn-agende{
+    background-color: #F7A637;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.3s ease;
+    transition: color 0.3s ease;
+    box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.primary-button .btn-agende:hover{
+    background: linear-gradient(45deg, #F7A637, #113346);
+    
+}
+
+.primary-button .btn-agende::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #FAF3E0;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.primary-button .btn-agende:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+
+/* galeria */
+
+.galeria-tex {
+   
+    background-color:#1A2E35;
+    padding: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    border: 8px solid;
+    border-image: linear-gradient(to left, #F7A637, #113346) 1;
+    
+}
+
+.galeria-tex h2 {
+    font-family: "DM Serif Text", serif;
+    color:#EDE7E3 ;
+    text-align: center;
+}
+
+.galeria-tex p {
+    font-family: "Rajdhani";
+    color:#EDE7E3 ;
+    margin-left: 40px;
+    margin-right: 40px;
+    font-size: large;
+}
+
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espaçamento entre os hexágonos */
+    justify-content: center; /* Centraliza a galeria */
+    background-color: #1A2E35;
+}
+
+.hexagon {
+    width: 250px;
+    height: 230px;
+    position: relative;
+    clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%);
+    overflow: hidden; /* Esconde qualquer parte da imagem que ultrapasse os limites do hexágono */
+    cursor: pointer;
+}
+
+.hexagon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem se ajuste ao tamanho da div sem distorção */
+    object-position: center; /* Centraliza a imagem dentro do hexágono */
+    transition: transform 0.3s ease;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.expanded-img {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
