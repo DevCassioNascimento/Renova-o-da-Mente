@@ -15,6 +15,52 @@
     
 }
 
+/* responsividade nav inicio*/
+
+/* Estilo do botão de menu (hambúrguer) */
+.menu-toggle {
+    display: none;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Ocultar o menu completamente em telas menores */
+@media (max-width: 767px) {
+    .nav-pills {
+        display: none !important; /* Usando !important para garantir que o menu seja oculto */
+    }
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* Exibir o menu em telas maiores */
+@media (min-width: 768px) {
+    .nav-pills {
+        display: flex !important; /* Garantindo a exibição do menu em telas maiores */
+    }
+    .menu-toggle {
+        display: none;
+    }
+}
+
+/* Mostrar o menu quando a classe 'show' for adicionada */
+.nav-pills.show {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    background-color: white;
+    top: 60px;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+
+/*responsividade nav fim*/
+
 
 body {
     margin: 0; /* Remove a margem padrão do body */
@@ -68,7 +114,7 @@ body {
 
 
 p{
-    font-family: "Rajdhani", sans-serif;
+    font-family: "Playfair Display", serif;
 }
 
 .renovacao-text{
@@ -121,7 +167,7 @@ p{
 }
 
 .text-carou {
-    font-family: "DM Serif Text", serif;
+    font-family: "Playfair Display", serif;
     padding-top: 70px;
     color: white;
     font-size: 77px;
@@ -147,7 +193,7 @@ p{
 
 
 .QuemSomos .mb-4{
-    font-family: "DM Serif Text", serif;
+    font-family: "Playfair Display", serif;
     color:#EDE7E3 ;
 }
 
@@ -155,7 +201,7 @@ p{
 
 .container-xxl .text-descricao {
     color:#EDE7E3 ;
-    font-family: "Rajdhani";
+    font-family: "Playfair Display", serif;
     font-size: large;
     
 
@@ -176,8 +222,12 @@ p{
     transition: background 0.3s ease;
     transition: color 0.3s ease;
     box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.4);
+}
 
-
+@media (max-width: 768px){
+    .col-lg-6  .btn-agende{
+        margin-left: 30px;
+    }
 }
 
 
@@ -266,11 +316,23 @@ p{
     color: #fff;
     text-shadow: 1px 1px 2px #000, 2px 2px 5px #555, 3px 3px 8px #aaa;
     font-size: 40px;
-    font-family: "DM Serif Text", serif;
+    font-family: "Playfair Display", serif;
     background-color: #1A2E35;
     margin-bottom: 0%;   
 
 }
+
+.textEspe {
+    opacity: 0;
+    transform:  translateY(20px) scale(0.8); /* Inicia diminuído */
+    transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+}
+
+.textEspe.visible{
+    opacity: 1;
+    transform:  translateY(0)  scale(1); /* Cresce para o tamanho original  */
+}
+
 
 
 
@@ -318,6 +380,15 @@ p{
     color: #555;
 }
 
+.service-content .na-clinica {
+    font-family: "Playfair Display", serif; 
+    font-size: 18px;
+}
+
+.service-content .left-text{
+    font-family: "Playfair Display", serif; 
+}
+
 
 /* galeria */ 
 
@@ -333,6 +404,19 @@ p{
 
 
 /* testando */
+
+.service-item {
+    opacity: 0;
+    transform: translateX(20px); /* Desloca o texto para baixo */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.service-item.visible {
+    opacity: 1;
+    transform: translateX(0); /* Retorna o texto à posição original */
+}
+
+
 
 .service-content {
     padding-left: 15px;
@@ -397,6 +481,9 @@ p{
     margin: 20px auto 15px auto;
   }
 
+ 
+ 
+
   .primary-button .btn-agende{
     background-color: #F7A637;
     color: white;
@@ -407,6 +494,16 @@ p{
     transition: background 0.3s ease;
     transition: color 0.3s ease;
     box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.4);
+    align-items: center;
+    margin-bottom: 10px;
+    margin-left: 45%;
+    
+}
+
+@media (max-width: 768px) {
+    .primary-button .btn-agende{
+        margin-left: 65px;
+    }
 }
 
 .primary-button .btn-agende:hover{
@@ -434,6 +531,18 @@ p{
 
 
 /* galeria */
+
+.hexagon {
+    opacity: 0;
+    transform: translateY(20px); /* Desloca o texto para baixo */
+    transition: opacity 2s ease-out, transform 2s ease-out;
+}
+.hexagon.visible{
+    opacity: 1;
+    transform: translateY(0); /* Retorna o texto à posição original */
+}
+
+
 
 .galeria-tex {
    
@@ -511,3 +620,245 @@ p{
     color: white;
     cursor: pointer;
 }
+
+/* pro-equipe inicio*/
+.pro-equipe{
+    width: 100%;
+    height: auto;
+    background-color: #F2F2F2 ;
+}
+
+.pro-equipe-descricao{
+
+    background-color:#F2F2F2 ;
+    padding: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    border: 8px solid;
+    border-image: linear-gradient(to right, #F7A637, #113346) 1;
+    width: 100%;
+    height: auto;
+}
+
+.pro-equipe-descricao h2 {
+    font-weight: bold;
+    text-align: center;
+    color: #113346;
+    text-shadow: 1px 1px 2px #000, 2px 2px 5px #555, 3px 3px 8px #aaa;
+    font-size: 40px;
+    font-family: "Playfair Display", serif;
+    background-color: #F2F2F2;
+    margin-bottom: 10px; 
+}
+
+.pro-equipe-descricao p{
+    font-family: "Playfair Display", serif;
+    font-size:larger;
+    font-weight: bold;
+}
+
+.pro-equipe-botao {
+    display: inline-block;
+    font-family: "Playfair Display", serif;
+    border-radius: 7px;
+    background-color: #113346;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    margin-left: 40%;
+  }
+  
+  .pro-equipe-botao span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .pro-equipe-botao span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .pro-equipe-botao:hover span {
+    padding-right: 25px;
+  }
+  
+  .pro-equipe-botao:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+  @media (max-width: 768px){
+    .pro-equipe-botao {
+        align-items: center;
+        margin-left: 21%;
+    }
+  }
+
+
+
+/*pro-equipe fim*/
+
+/*depoimentos iniciio*/
+
+.depoimentos{
+    height: 800px;
+    width: 100%;
+    background-color:#113346;
+    
+}
+
+.depoimentos-container{
+
+    justify-content: space-between; /* Distribui os itens igualmente */
+    align-items: center; /* Alinha os itens no centro verticalmente */
+    gap: 8px; /* Espaçamento entre os itens */
+    height: auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 200px 200px 200px ;
+    justify-content: space-around;
+
+}
+.depoimentos-container .card{
+    flex: 1; /* Faz com que cada item ocupe a mesma quantidade de espaço */
+    text-align: center; /* Centraliza o conteúdo dentro do item */
+}
+
+@media (max-width: 768px){
+    .depoimentos-container .card{
+        align-items: center;
+        text-align: center;
+        margin-left: 13px;
+    }
+}
+
+
+.depoimentos h2 {
+
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000, 2px 2px 5px #555, 3px 3px 8px #aaa;
+    font-size: 40px;
+    font-family: "Playfair Display", serif;
+    margin-bottom: 30px; 
+    padding-top: 20px;
+
+}
+
+
+
+/*depoimentos fim*/
+
+/* Responsividade depoimentos */
+@media (max-width: 768px) {
+    /* Ajuste a altura da seção para telas menores */
+    .depoimentos {
+        height: auto; /* Altura automática para ajustar ao conteúdo */
+        padding: 20px 0;
+    }
+
+    /* Ajusta o grid para duas colunas em tablets e telas médias */
+    .depoimentos-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px; /* Espaçamento aumentado para telas menores */
+    }
+
+    /* Ajusta o tamanho do texto do título para telas menores */
+    .depoimentos h2 {
+        font-size: 30px; /* Reduz o tamanho da fonte */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajusta o grid para uma coluna em celulares */
+    .depoimentos-container {
+        grid-template-columns: 1fr; /* Coloca os itens em uma única coluna */
+        justify-content: center; /* Centraliza os itens */
+        gap: 15px; /* Espaçamento adicional entre os itens */
+    }
+
+    /* Ajusta o tamanho do texto do título para telas pequenas */
+    .depoimentos h2 {
+        font-size: 24px; /* Reduz ainda mais o tamanho da fonte */
+        margin-bottom: 20px; /* Reduz o espaçamento inferior */
+    }
+}
+
+/*responsividade depoimentos*/
+
+/* rodape inicio*/
+
+.rodape{
+    width: 100%;
+    height: auto;
+    background-color:#F2F2F2 ;
+    display:flex;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.rodape{
+    background-color:#F2F2F2 ;
+    padding: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    border: 8px solid;
+    border-image: linear-gradient(to right, #F7A637, #113346) 1;
+    width: 100%;
+    height: auto;
+    background: linear-gradient(120deg, #113346 10%, rgba(0, 0, 0, 0.05926120448179273) 50%, #F7A637 90%);
+}
+
+.rodape h4{
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000, 2px 2px 5px #555, 3px 3px 8px #aaa;
+    font-size: 40px;
+    font-family: "Playfair Display", serif;
+    margin-bottom: 30px; 
+    padding-top: 20px;
+}
+
+.rodape p {
+    font-family: "Playfair Display", serif;
+    color: #F2F2F2 ;
+    font-weight: bold;
+}
+
+/*rodape fim */
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .rodape {
+        flex-direction: column; /* Alinha os itens em coluna em telas menores */
+        align-items: center; /* Centraliza os itens */
+        padding: 20px; /* Aumenta o espaçamento interno */
+    }
+
+    .rodape h4 {
+        font-size: 30px; /* Reduz o tamanho da fonte para telas menores */
+        margin-bottom: 20px; /* Reduz o espaçamento inferior */
+    }
+}
+
+@media (max-width: 480px) {
+    .rodape h4 {
+        font-size: 24px; /* Reduz ainda mais o tamanho da fonte para telas muito pequenas */
+        margin-bottom: 15px; /* Reduz o espaçamento inferior */
+    }
+}
+
+

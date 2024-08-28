@@ -46,3 +46,81 @@ document.querySelectorAll('.col-md-6').forEach(function(item) {
     });
 });
 
+
+// responsividade nav 
+
+function toggleMenu() {
+    var menu = document.querySelector('.nav-pills');
+    menu.classList.toggle('show');
+}
+
+// efeito surgir galeria 
+
+document.addEventListener('scroll', function() {
+    var elementos = document.querySelectorAll('.hexagon');
+
+    elementos.forEach(function(elemento) {
+        var posicao = elemento.getBoundingClientRect().top;
+        var alturaTela = window.innerHeight;
+
+        if (posicao < alturaTela - 100) { 
+            elemento.classList.add('visible');
+        }
+    });
+});
+
+
+// efeito surgir especialidades 
+
+document.addEventListener('scroll', function() {
+    var elementos = document.querySelectorAll('.service-item');
+
+    elementos.forEach(function(elemento) {
+        var posicao = elemento.getBoundingClientRect().top;
+        var alturaTela = window.innerHeight;
+
+        if (posicao < alturaTela - 100) { 
+            elemento.classList.add('visible');
+        }
+    });
+});
+
+// efeito surgir texto especialidades 
+
+document.addEventListener('scroll', function() {
+    var elementos = document.querySelectorAll('.textEspe');
+
+    elementos.forEach(function(elemento) {
+        var posicao = elemento.getBoundingClientRect().top;
+        var alturaTela = window.innerHeight;
+
+        if (posicao < alturaTela - 100) {
+            elemento.classList.add('visible');
+        }
+    });
+});
+
+// responsividade carrousel inicio 
+
+document.addEventListener('DOMContentLoaded', function() {
+    const carou = document.querySelector('#carouselExampleFade');
+    const carouselItems = carou.querySelectorAll('.carousel-item');
+    let startX;
+
+    carou.addEventListener('touchstart', function(e) {
+        startX = e.touches[0].clientX;
+    });
+
+    carou.addEventListener('touchend', function(e) {
+        const endX = e.changedTouches[0].clientX;
+        const threshold = 50; // Mínima distância para considerar um swipe
+
+        if (startX - endX > threshold) {
+            // Swipe para a esquerda (próxima imagem)
+            $('#carouselExampleFade').carousel('next');
+        } else if (endX - startX > threshold) {
+            // Swipe para a direita (imagem anterior)
+            $('#carouselExampleFade').carousel('prev');
+        }
+    });
+});

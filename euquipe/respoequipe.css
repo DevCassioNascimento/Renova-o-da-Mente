@@ -1,0 +1,59 @@
+/* Responsividade do Carrossel */
+
+@media (max-width: 768px) {
+  .carrossel {
+      position: relative; /* Muda a posição do carrossel para relativa em telas menores */
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 0; /* Ajusta o z-index para que o carrossel não sobreponha o conteúdo */
+  }
+
+  .main{
+    background: linear-gradient(120deg, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0.05926120448179273) 50%, rgba(0, 0, 0, 1) 90%);
+  }
+
+  .imagem {
+      width: 100%;
+      height: auto; /* Mantém a proporção da imagem */
+      object-fit: contain; /* Garante que a imagem não seja cortada */
+  }
+
+  .conteudo {
+      display: block; /* Altera a exibição do conteúdo para bloco, colocando-o abaixo da imagem */
+      padding: 20px; /* Adiciona um espaço interno */
+  }
+
+  .informacoes {
+      background-color: rgba(0, 0, 0, 0.7); /* Define um fundo semitransparente para o conteúdo */
+      color: #ffffff; /* Garante que o texto continue legível */
+      padding: 20px; /* Espaçamento interno para o conteúdo */
+      margin-top: 20px; /* Espaçamento entre a imagem e o conteúdo */
+  }
+
+  .informacoes h1 {
+      font-size: 28px; /* Reduz o tamanho da fonte para se adequar à tela menor */
+      margin-bottom: 20px;
+  }
+
+  .informacoes .descricao {
+      width: 100%; /* Ajusta a largura para preencher a tela */
+      font-size: 18px; /* Reduz o tamanho da fonte para leitura em telas menores */
+      line-height: 1.5em; /* Ajusta o espaçamento entre linhas */
+      height: auto; /* Permite que a altura se ajuste conforme o conteúdo */
+      padding-right: 0;
+  }
+
+  .botoes-carrossel {
+      margin-top: 20px; /* Espaçamento entre o conteúdo e os botões */
+  }
+
+  .botoes-carrossel .botao {
+      width: 12px;
+      height: 12px;
+  }
+
+  .botoes-carrossel .botao.selecionado {
+      background-color: #1d8346; /* Mantém a cor de destaque para o botão selecionado */
+  }
+}
