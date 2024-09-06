@@ -4,7 +4,7 @@
     position: sticky;
     position: -webkit-sticky;
     z-index: 1000; /* Garante que a barra fique sobre outros elementos da página */
-    background-color: #EDE7E3;
+    background-color: #f2f2f2 ;
     height: 120px;
     width: 100%;
     top: 0;
@@ -60,6 +60,60 @@
 
 
 /*responsividade nav fim*/
+
+
+/*icon whatsapp inicio*/
+.whatsapp-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-icon {
+    background-color: #25D366;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.whatsapp-icon svg {
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+
+.whatsapp-text {
+    background-color: #25D366;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: all 0.3s ease;
+    position: absolute;
+    right: 100%;
+    white-space: nowrap;
+    margin-right: 10px;
+}
+
+.whatsapp-container:hover .whatsapp-text {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.whatsapp-container:hover .whatsapp-icon {
+    transform: scale(1.1);
+}
+/*icon whatsapp fim*/
 
 
 body {
@@ -188,7 +242,7 @@ p{
 }
 
 .QuemSomos{
-    background-color: #1A2E35;
+    background-color: #113346;
 } 
 
 
@@ -201,10 +255,37 @@ p{
 
 .container-xxl .text-descricao {
     color:#EDE7E3 ;
-    font-family: "Playfair Display", serif;
+    font-family: Rajdhani;
     font-size: large;
     
 
+}
+
+.read-more-icon {
+    font-weight: bold;
+    color: #113346; /* Cor do ícone indicativo */
+    animation: pulse 1.5s infinite; /* Animação para dar destaque */
+}
+
+/* Efeito ao passar o mouse */
+.read-more:hover {
+    color: #113346; /* Mudança de cor ao passar o mouse */
+}
+
+/* Animação de pulsar para o ícone "..." */
+@keyframes pulse {
+    0% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
 }
 
 .col-lg-6  .btn-agende {
@@ -281,6 +362,9 @@ p{
     transform: scale(1.05); /* Aumenta ligeiramente o tamanho do elemento */
 }
     
+.service-content{
+    background: linear-gradient(120deg, #f2f2f2 10%, rgba(0, 0, 0, 0.05926120448179273) 50%, #C0C0C0 90%);
+}
 
 .service-item {
     transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
@@ -294,6 +378,28 @@ p{
     background-color: #e5e5e5; /* Muda a cor de fundo ao passar o mouse */
 }
 
+.service-item .read-more-icon img {
+    margin-top: 1px;
+    padding-top: 1px;
+}
+
+.read-more-icon {
+    display: none;
+}
+
+/* responsivade icone touch inicio*/
+
+@media screen and (max-width: 768px) {
+    .read-more-icon {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .service-item p {
+        display: none;
+    }
+}
+/*responsivade icone touch fim*/
 
 
 
@@ -308,16 +414,21 @@ p{
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
     border: 8px solid;
     border-image: linear-gradient(to right, #F7A637, #113346) 1;
+    background: linear-gradient(120deg, #4A7B8E 20%, rgba(0, 0, 0, 0.015) 50%, #F8D4B0 80%);
+
+
+
 }
 
 .textoEspe .textEspe {
-    font-weight: bold;
-    text-align: center;
-    color: #fff;
-    text-shadow: 1px 1px 2px #000, 2px 2px 5px #555, 3px 3px 8px #aaa;
+    text-align: center;  
+    font-weight: 300;
+    color: #2E3D4D; /* Azul Acinzentado */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Sombra leve para destacar o texto */ 
     font-size: 40px;
     font-family: "Playfair Display", serif;
-    background-color: #1A2E35;
+   
+
     margin-bottom: 0%;   
 
 }
@@ -388,6 +499,7 @@ p{
 .service-content .left-text{
     font-family: "Playfair Display", serif; 
 }
+
 
 
 /* galeria */ 
@@ -481,6 +593,78 @@ p{
     margin: 20px auto 15px auto;
   }
 
+  .demanda{
+   
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    background: linear-gradient(120deg, #f2f2f2 10%, rgba(0, 0, 0, 0.05926120448179273) 50%, #C0C0C0 90%);
+   padding-top: 20px;
+  }
+
+  @keyframes uldemanda {
+    from {
+        transform: rotateY(90deg);
+        opacity: 0;
+    }
+    to {
+        transform: rotateY(0deg);
+        opacity: 1;
+    }
+}
+
+/* demanda inicio*/
+.uldemanda {
+    animation: uldemanda 1s ease-in-out;
+}
+
+  .demanda h3{
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000, 2px 2px 5px #555, 3px 3px 8px #aaa;
+    font-size: 40px;
+    font-family: "Playfair Display", serif;
+    margin-bottom: 3%;  
+  }
+
+  .demanda li{
+    color: #113346;
+    font-size: larger;
+    font-family: Rajdhani;
+  }
+
+
+  /* Ajustes para telas de celular */
+@media (max-width: 768px) {
+    .demanda h3 {
+        font-size: 28px; /* Reduz o tamanho da fonte para melhor legibilidade em telas pequenas */
+        margin-bottom: 5%; /* Aumenta o espaçamento para uma melhor separação visual */
+    }
+
+    .demanda li {
+        font-size: medium; /* Ajusta o tamanho da fonte para que o texto caiba melhor na tela */
+        line-height: 1.5; /* Aumenta o espaçamento entre as linhas para melhorar a legibilidade */
+    }
+}
+
+@media (max-width: 480px) {
+    .demanda h3 {
+        font-size: 24px; /* Reduz ainda mais o tamanho da fonte para telas muito pequenas */
+        margin-bottom: 7%; /* Ajusta o espaçamento para manter o equilíbrio visual */
+    }
+
+    .demanda li {
+        font-size: small; /* Reduz o tamanho da fonte para melhor encaixe */
+        line-height: 1.6; /* Aumenta ainda mais o espaçamento entre as linhas */
+        padding-left: 10px; /* Adiciona um pouco de espaçamento à esquerda */
+    }
+}
+
+  /*demanda fim*/
+
+
  
  
 
@@ -546,12 +730,9 @@ p{
 
 .galeria-tex {
    
-    background-color:#1A2E35;
+    background-color:#113346;
     padding: 10px;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
-    border: 8px solid;
-    border-image: linear-gradient(to left, #F7A637, #113346) 1;
-    
+    font-family: Rajdhani;
 }
 
 .galeria-tex h2 {
@@ -574,7 +755,7 @@ p{
     flex-wrap: wrap;
     gap: 20px; /* Espaçamento entre os hexágonos */
     justify-content: center; /* Centraliza a galeria */
-    background-color: #1A2E35;
+    background-color: #113346;
 }
 
 .hexagon {
@@ -625,30 +806,18 @@ p{
 .pro-equipe{
     width: 100%;
     height: auto;
-    background-color: #F2F2F2 ;
+    background: linear-gradient(120deg, #f2f2f2 10%, rgba(0, 0, 0, 0.05926120448179273) 50%, #C0C0C0 90%);
 }
 
 .pro-equipe-descricao{
-
-    background-color:#F2F2F2 ;
+    background: linear-gradient(120deg, #f2f2f2 10%, rgba(0, 0, 0, 0.05926120448179273) 50%, #C0C0C0 90%);
     padding: 10px;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
-    border: 8px solid;
-    border-image: linear-gradient(to right, #F7A637, #113346) 1;
+  
     width: 100%;
     height: auto;
 }
 
-.pro-equipe-descricao h2 {
-    font-weight: bold;
-    text-align: center;
-    color: #113346;
-    text-shadow: 1px 1px 2px #000, 2px 2px 5px #555, 3px 3px 8px #aaa;
-    font-size: 40px;
-    font-family: "Playfair Display", serif;
-    background-color: #F2F2F2;
-    margin-bottom: 10px; 
-}
 
 .pro-equipe-descricao p{
     font-family: "Playfair Display", serif;
@@ -732,14 +901,22 @@ p{
 }
 .depoimentos-container .card{
     flex: 1; /* Faz com que cada item ocupe a mesma quantidade de espaço */
-    text-align: center; /* Centraliza o conteúdo dentro do item */
+    text-align: center; /* Centraliza o conteúdo dentro do item */   
+    margin-top: 30px;
 }
+
+
+
+
+
+
+
 
 @media (max-width: 768px){
     .depoimentos-container .card{
         align-items: center;
         text-align: center;
-        margin-left: 13px;
+        margin-left: 35px;
     }
 }
 
@@ -798,6 +975,70 @@ p{
 
 /*responsividade depoimentos*/
 
+/* Redes sociais inicio*/
+.redes-sociais{
+    width: 100%;
+    background: linear-gradient(120deg, #f2f2f2 10%, rgba(0, 0, 0, 0.05926120448179273) 50%, #C0C0C0 90%);
+    margin: 40px auto;
+    padding: 20px 20px;
+    height: auto;
+    margin-top: 0%;
+    margin-bottom: 0%;
+
+}
+
+.gallery-redes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-content: center;
+}
+.gallery-item-redes {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    display: block;
+    text-decoration: none;
+    outline: none;
+    border: none;
+}
+.gallery-item-redes img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+.gallery-item-redes:hover img {
+    transform: scale(1.05);
+}
+.gallery-item-redes::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.gallery-item-redes:hover::after {
+    opacity: 1;
+}
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+/*Redes sociais fim*/
+
 /* rodape inicio*/
 
 .rodape{
@@ -817,7 +1058,10 @@ p{
     border-image: linear-gradient(to right, #F7A637, #113346) 1;
     width: 100%;
     height: auto;
-    background: linear-gradient(120deg, #113346 10%, rgba(0, 0, 0, 0.05926120448179273) 50%, #F7A637 90%);
+    background: linear-gradient(120deg, #f2f2f2 10%, rgba(0, 0, 0, 0.05926120448179273) 50%, #C0C0C0 90%);
+
+
+
 }
 
 .rodape h4{
@@ -833,9 +1077,73 @@ p{
 
 .rodape p {
     font-family: "Playfair Display", serif;
-    color: #F2F2F2 ;
+    color: #2E3D4D ;
     font-weight: bold;
 }
+
+.Endereço{
+    align-items: center;
+    text-align: center;
+    padding-top: 9px;
+}
+
+
+
+.entreemcontato{
+    text-align: center;
+    align-items: center;
+}
+
+.mapa {
+   
+    right: 20px;
+    bottom: 20px;
+}
+
+.map-link img {
+    width: 300px;  /* Ajuste este valor para o tamanho desejado */
+    height: auto; /* Mantém a proporção da imagem */
+    transition: transform 0.3s ease;
+}
+
+.map-link:hover img {
+    transform: scale(1.1);
+}
+
+.cassio{
+    text-align: center;
+    align-items: center;
+    margin-left: 10%;
+
+    
+}
+
+.cassio h5{
+    color: #113346;
+    
+}
+
+.cassio .cassio-a{
+    font-size:small;
+    color: #ffffff;
+            text-shadow: 1px 1px 0 #4a4a4a,
+                         2px 2px 0 #5a5a5a,
+                         3px 3px 0 #6a6a6a,
+                         4px 4px 0 #7a7a7a,
+                         5px 5px 0 #8a8a8a,
+                         6px 6px 0 #9a9a9a,
+                         7px 7px 0 #aaaaaa,
+                         8px 8px 0 #bbbbbb,
+                         9px 9px 0 #cccccc;
+    font-family: "Sedgwick Ave", cursive;
+    cursor: pointer;
+    transition: 0.9s; 
+}
+
+.cassio-a:hover{
+    font-size: x-large;
+}
+
 
 /*rodape fim */
 

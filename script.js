@@ -124,3 +124,33 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
+// responsividade touch especialidade 
+
+document.addEventListener('DOMContentLoaded', function() {
+    const readMoreIcon = document.getElementById('readMoreIcon');
+    const paragraph = readMoreIcon.nextElementSibling.nextElementSibling;
+
+    readMoreIcon.addEventListener('click', function() {
+        if (window.innerWidth <= 768) {
+            if (paragraph.style.display === 'none' || paragraph.style.display === '') {
+                paragraph.style.display = 'block';
+            } else {
+                paragraph.style.display = 'none';
+            }
+        }
+    });
+
+    // Ajusta a visibilidade do parágrafo quando a janela é redimensionada
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            paragraph.style.display = 'block';
+        } else {
+            paragraph.style.display = 'none';
+        }
+    });
+});
+
+
+
